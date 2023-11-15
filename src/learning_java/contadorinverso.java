@@ -1,4 +1,5 @@
 package learning_java;
+import java.util.Scanner;
 
 public class contadorinverso {
 
@@ -29,5 +30,49 @@ public class contadorinverso {
 			System.out.print(x);
 			System.out.print(" ");
 		}
+		
+		System.out.println();
+		
+		int max;
+		int min;
+		int salto;
+		int nsalt;
+		int y=0;
+		
+		
+		
+		Scanner escaner;
+		escaner= new Scanner(System.in);
+		
+		do {
+		
+		System.out.println("Introduce el maximo:");
+		max= escaner.nextInt();
+		
+		System.out.println("Introduce el minimo:");
+		min=escaner.nextInt();
+		
+		System.out.println("Introduce el salto");
+		salto=escaner.nextInt();
+		} while(max<=min);
+		
+		
+		for (x = max; x >= min; x = x - salto) {
+			
+			System.out.print(x);
+			System.out.print(" ");
+			y++;
+			
+			if(y>9) {
+				System.out.println();
+				y=0;
+			}
+				
+		}
+		
+		
+		
+		
+		escaner.close();
 	}
 }
