@@ -20,7 +20,6 @@ public class metodo {
 			return false;
 		}
 		return true;
-
 	}
 	
 	public static boolean comprobarMaxMin(int max, int min) {
@@ -33,11 +32,8 @@ public class metodo {
 	
 	public static void comprobarNumeros(int max, int min, int valor) {
 		
-		
-		
 		Scanner escaner;
 		escaner = new Scanner(System.in);
-		
 		
 		do {
 			System.out.println("introduce el valor minimo:");
@@ -53,20 +49,7 @@ public class metodo {
 			System.out.println(metodo.comprobarValor(max, min, valor));
 		} while (!metodo.comprobarValor(max, min, valor));
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		escaner.close();
-		
 	}
 	
 }
