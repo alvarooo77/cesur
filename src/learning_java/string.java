@@ -23,6 +23,7 @@ public class string {
 				hola(cadena.toLowerCase(), indice);
 			}
 		}
+		escaner.close();
 	}
 
 
