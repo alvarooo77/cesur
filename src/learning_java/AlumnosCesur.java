@@ -18,13 +18,13 @@ public class AlumnosCesur {
 		Alumno joseRamon = new Alumno("jose ramon", 39, "DAM");
 		Alumno dario = new Alumno("dario", 17, "DAM");
 		Alumno adrian = new Alumno("adrian", 25, "DAM");
-
-		System.out.println(alvaro);
-		System.out.println(alvaro.toString());
-		
+		Alumno juanantonio = new Alumno("juan antonio",23,"DAW");
+	
+	
 		Clase premiunplus;
 		premiunplus = new Clase("premiunplus");
-		System.out.println(premiunplus);
+		
+		
 		
 		premiunplus.add(ale);
 		premiunplus.add(alvaro);
@@ -38,11 +38,28 @@ public class AlumnosCesur {
 		premiunplus.add(joseRamon);
 		premiunplus.add(dario);
 		premiunplus.add(adrian);
+		premiunplus.add(juanantonio);
 		
+		System.out.println("Alumnos de DAM:");
 		for(int i=0; i<premiunplus.getNumAlumno(); i++) {
-			System.out.println(premiunplus.getAlumnos()[i]);
+			if(premiunplus.getAlumnos()[i].getNombre()=="dario") {
+				premiunplus.getAlumnos()[i].setEdad(18);
+			}
+			if(premiunplus.getAlumnos()[i].getCurso()=="DAM") {
+				System.out.println(premiunplus.getAlumnos()[i]);
+			}
 		}
-		
+		System.out.println();
+		System.out.println("Alumnos de DAW:");
+		for(int i=0; i<premiunplus.getNumAlumno(); i++) {
+			if(premiunplus.getAlumnos()[i].getNombre()=="dario") {
+				premiunplus.getAlumnos()[i].setEdad(18);
+			}
+			if(premiunplus.getAlumnos()[i].getCurso()=="DAW") {
+				System.out.println(premiunplus.getAlumnos()[i]);
+			}
+		}
+		 
 	}
 }
 
