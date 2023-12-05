@@ -1,7 +1,7 @@
 package learning_java;
 
 public class AlumnosCesur {
-
+	
 	public static void main(String[] args) {
 
 		// creo objeto llamado alumno
@@ -20,7 +20,7 @@ public class AlumnosCesur {
 		Alumno adrian = new Alumno("adrian", 25, "DAM");
 		Alumno juanantonio = new Alumno("juan antonio",23,"DAW");
 	
-	
+		
 		Clase premiunplus;
 		premiunplus = new Clase("premiunplus");
 		
@@ -52,15 +52,13 @@ public class AlumnosCesur {
 		System.out.println();
 		System.out.println("Alumnos de DAW:");
 		for(int i=0; i<premiunplus.getNumAlumno(); i++) {
-			if(premiunplus.getAlumnos()[i].getNombre()=="dario") {
-				premiunplus.getAlumnos()[i].setEdad(18);
-			}
 			if(premiunplus.getAlumnos()[i].getCurso()=="DAW") {
 				System.out.println(premiunplus.getAlumnos()[i]);
 			}
 		}
-		 
+		
 	}
+	
 }
 
 class Alumno {
@@ -110,6 +108,7 @@ class Alumno {
 }
 
 class Clase {
+	
 
 	// Atributos
 	private String nombre;
@@ -163,6 +162,14 @@ class Clase {
 		if (numAlumno<TOTALALUMNOS) {
 			alumnos[numAlumno] = nuevoAlumno;
 			numAlumno++;
+		}
+	}
+	
+	public void delete(String nombreAlumno) {
+		for (int i = 0; i <numAlumno; i++) {
+			if(getAlumnos()[i].getNombre()==nombreAlumno) {
+				
+			}
 		}
 	}
 }
