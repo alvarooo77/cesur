@@ -1,4 +1,4 @@
-package learning_java;
+package practicas;
 
 public class hola{
 	public static void main(String[] args) {
