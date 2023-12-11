@@ -8,6 +8,8 @@ class Clase {
 	private int numAlumno;
 	private Alumno[] alumnos;
 	private static final int TOTALALUMNOS = 15;
+	private Profesor[] profesor;
+	private String nombreClase;
 
 	// Constructor
 	public Clase(String nombre) {
@@ -46,8 +48,16 @@ class Clase {
 		this.nombre = nombre;
 	}
 	
+	public Profesor[] getProfesor() {
+		return profesor;
+	}
+
+	public void setProfesor(Profesor[] profesor) {
+		this.profesor = profesor;
+	}
+
 	public String toString() {
-		return ("[Clase:" + nombre + " NumAlumno:" + numAlumno + "]");
+		return ("[Clase:" + nombre + "Profesor: " + profesor + "NumAlumno:" + numAlumno + "]");
 	}
 	
 	public void add(Alumno nuevoAlumno) {
@@ -58,13 +68,24 @@ class Clase {
 		}
 	}
 	
-	public void delete(String nombreAlumno) {
-		for (int i = 0; i <numAlumno; i++) {
-			if(getAlumnos()[i].getNombre()==nombreAlumno) {
-				
-			}
+	public void delete(String nombre) {
+		// solo hay un alumno con el mismo nombre.
+		int indice = 0;
+		while ((alumnos[indice].getNombre() != nombre) && (indice < alumnos.length)) {
+			indice++;
 		}
-	}
+		if (indice < alumnos.length) {
+			numAlumno--;
+			for (int i = indice; i < numAlumno; i++) {
+				alumnos[i] = alumnos[i + 1];
+			}
+			alumnos[numAlumno] = null;
+
+		} else { // recorrido array sin encontrar el objeto.
+			System.out.println("El alumno [" + nombre + "] no se encuentra en la clase [" + nombreClase + "]");
+		}
+
+	} // fin delete
 	
 	
 }

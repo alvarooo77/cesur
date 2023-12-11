@@ -1,4 +1,5 @@
 package alumnocesur;
+import practicas.Creator;
 
 public class AlumnosCesur {
 	
@@ -21,24 +22,16 @@ public class AlumnosCesur {
 		Alumno juanantonio = new Alumno("juan antonio",23,"DAW");
 	
 		
+		// Creo objeto clase premiun plus
 		Clase premiunplus;
 		premiunplus = new Clase("premiunplus");
 		
 		
-		
-		premiunplus.add(ale);
-		premiunplus.add(alvaro);
-		premiunplus.add(juanCarlos);
-		premiunplus.add(fran);
-		premiunplus.add(andre);
-		premiunplus.add(santiago);
-		premiunplus.add(janhin);
-		premiunplus.add(ramon);
-		premiunplus.add(sinran);
-		premiunplus.add(joseRamon);
-		premiunplus.add(dario);
-		premiunplus.add(adrian);
-		premiunplus.add(juanantonio);
+		for (int i = 0; i < 15; i++) {
+			premiunplus.add(new Alumno(Creator.newName(), Creator.newAge(), "DAM"));
+			System.out.println(premiunplus.getAlumnos()[i]);
+		}
+	
 		
 		System.out.println("Alumnos de DAM:");
 		for(int i=0; i<premiunplus.getNumAlumno(); i++) {
