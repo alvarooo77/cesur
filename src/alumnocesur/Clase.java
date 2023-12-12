@@ -68,24 +68,37 @@ class Clase {
 		}
 	}
 	
+	
 	public void delete(String nombre) {
-		// solo hay un alumno con el mismo nombre.
-		int indice = 0;
-		while ((alumnos[indice].getNombre() != nombre) && (indice < alumnos.length)) {
-			indice++;
-		}
-		if (indice < alumnos.length) {
-			numAlumno--;
-			for (int i = indice; i < numAlumno; i++) {
-				alumnos[i] = alumnos[i + 1];
+		int indice=0;
+		boolean encontrado = false;
+		
+		
+		while(!encontrado &&(indice<numAlumno)) {
+			if(alumnos[indice].getNombre() == nombre) {
+				encontrado = true;
+			}else {
+				indice++;
 			}
-			alumnos[numAlumno] = null;
-
-		} else { // recorrido array sin encontrar el objeto.
-			System.out.println("El alumno [" + nombre + "] no se encuentra en la clase [" + nombreClase + "]");
 		}
-
+		if(indice<numAlumno) {
+			
+			for(int i=0; i<(numAlumno-indice); i++) {
+				alumnos[indice]=alumnos[indice+1];
+			}
+			numAlumno--;
+			
+		}else {
+			System.out.println("no se ha encontrado al alumno");
+		}
+		
 	} // fin delete
 	
+	public void listadoAlumnos() {
+		System.out.println("Listado alumnos de la clase: " + nombreClase);
+		for (int i = 0; i < numAlumno; i++) {
+			System.out.println(alumnos[i]);
+		}
+	}
 	
 }

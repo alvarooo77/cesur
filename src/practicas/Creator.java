@@ -1,5 +1,6 @@
 package practicas;
 import java.util.Random;
+
 public class Creator {
 	
 	private static String[] nombres = { "Daniel", "Andres", "Francisco", "Santiago", "JoseRamon", "Ramon", "Dario", "JuanCarlos",
