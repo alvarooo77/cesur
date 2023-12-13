@@ -8,8 +8,9 @@ class Clase {
 	private int numAlumno;
 	private Alumno[] alumnos;
 	private static final int TOTALALUMNOS = 15;
-	private Profesor[] profesor;
+	private Profesor profesor;
 	private String nombreClase;
+	
 
 	// Constructor
 	public Clase(String nombre) {
@@ -48,11 +49,11 @@ class Clase {
 		this.nombre = nombre;
 	}
 	
-	public Profesor[] getProfesor() {
+	public Profesor getProfesor() {
 		return profesor;
 	}
 
-	public void setProfesor(Profesor[] profesor) {
+	public void setProfesor(Profesor profesor) {
 		this.profesor = profesor;
 	}
 
@@ -60,13 +61,14 @@ class Clase {
 		return ("[Clase:" + nombre + "Profesor: " + profesor + "NumAlumno:" + numAlumno + "]");
 	}
 	
-	public void add(Alumno nuevoAlumno) {
+	public void addAlumno(Alumno nuevoAlumno) {
 		
 		if (numAlumno<TOTALALUMNOS) {
 			alumnos[numAlumno] = nuevoAlumno;
 			numAlumno++;
 		}
 	}
+	
 	
 	
 	public void delete(String nombre) {

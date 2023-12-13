@@ -1,57 +1,37 @@
 package alumnocesur;
+
+import java.util.Random;
+
 import practicas.Creator;
 
 public class AlumnosCesur {
-	
+
 	public static void main(String[] args) {
+		
+		Random aleatorio = new Random();
+		String nombreClaseTemp;
+		CentroEstudio cesurEste = new CentroEstudio("Cesur el palo", 5, 4);
+		Clase claseTemp;
+		Administrativo administrativoTemp;
+		
+		for (int i = 0; i < 5; i++) {
+			nombreClaseTemp = Creator.newClase();
+			claseTemp = new Clase(nombreClaseTemp);
+			claseTemp.setProfesor(new Profesor(Creator.newName(), Creator.newAge(), nombreClaseTemp));
+			
+			for (int x = 0; x < 15; x++) {
+				claseTemp.addAlumno(new Alumno(Creator.newName(), Creator.newAge(), nombreClaseTemp));
+				
+			}
+			
+			cesurEste.getClases()[i] = claseTemp;
+			
+		}
+		for (int i = 0; i < 4; i++) {
+			administrativoTemp = new Administrativo(Creator.newName(), Creator.newAge(), aleatorio.nextBoolean());
+		}
 
+		CentroEstudio cesurPTA = new CentroEstudio("Cesur PTA", 5, 4);
 		
-		// Creo objeto clase premiun plus
-		Clase premiunplus;
-		premiunplus = new Clase("premiunplus");
-		
-		// Creo los alumnos 
-		for (int i = 0; i < 15; i++) {
-			premiunplus.add(new Alumno(Creator.newName(), Creator.newAge(), "DAM"));
-		}
-	
-		
-		System.out.println("Alumnos de DAM:");
-		System.out.println();
-		for(int i=0; i<premiunplus.getNumAlumno(); i++) {
-			if(premiunplus.getAlumnos()[i].getCurso()=="DAM") {
-				System.out.println(premiunplus.getAlumnos()[i]);		//muestra los alumnos por pantalla que pertenecen a DAM
-			}
-		}
-		System.out.println();
-		System.out.println();
-		System.out.println("Alumnos de DAW:");
-		for(int i=0; i<premiunplus.getNumAlumno(); i++) {
-			if(premiunplus.getAlumnos()[i].getCurso()=="DAW") {			//Muestra por pantalla los alumnos de DAW
-				System.out.println(premiunplus.getAlumnos()[i]);
-			}
-		}
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
