@@ -24,6 +24,7 @@ public class AlumnosCesur {
 				
 			}
 			
+			
 			cesurEste.getClases()[i] = claseTemp;
 			
 		}
