@@ -3,14 +3,12 @@ package practicas;
 public class SimuladorLista {
 
 	public static void main(String[] args) {
-		
-		MiArray antonio;
-		MiArray anthony;
-		antonio = new MiArray();
-		anthony = new MiArray(40);
-
-		
-		
+		MiArray yo = new MiArray(100);
+		for (int i=0; i<100;i++) {
+			yo.insertarValor(i+10);
+			System.out.println(yo.getIntMiArray(i));
+		}
+		System.out.println(yo.getNumElem());
 		
 	}
 	
