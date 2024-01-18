@@ -1,18 +1,18 @@
 package animales;
 
 public class Animal {
-	
+	// atributos
 	private String nombre;
-	private int tpVida;
+	private int tpoVida;
 	
-	protected Animal(String nombre, int tpVida) {	
-		
+	// constructor con dos parámetros
+	protected Animal(String nombre, int tpoVida) {
+		super();
 		this.nombre = nombre;
-		
-		if((tpVida>0)&&(tpVida<0)) {
-			this.tpVida=tpVida;
+		if ((tpoVida > 0) && (tpoVida < 150)) {
+			this.tpoVida = tpoVida;
 		} else {
-			this.tpVida = 0;
+			this.tpoVida = 0;
 		}
 	}
 
@@ -24,14 +24,15 @@ public class Animal {
 		this.nombre = nombre;
 	}
 
-	public int getTpVida() {
-		return tpVida;
+	public int getTpoVida() {
+		return tpoVida;
 	}
 
-	public void setTpVida(int tpVida) {
-		this.tpVida = tpVida;
+	public void setTpoVida(int tpoVida) {
+		this.tpoVida = tpoVida;
 	}
-	
-	
-	
+
+	public void sonido() {
+		System.out.println("sonido ANIMAL");
+	}
 }
