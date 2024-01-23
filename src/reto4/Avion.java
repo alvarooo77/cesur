@@ -3,17 +3,18 @@ package reto4;
 public class Avion {
 	
 	// Atributos
-	private static int idAvion=0;
+	private static int idAvion_def=0;
+	final private int idAvion;
 	private String modAvion;
 	private int capAvion;
 	private Piloto piloto;
 	
 	
 	// Constructor
-	public Avion(int idAvion, String modAvion, int capAvion, Piloto piloto) {
+	public Avion(String modAvion, int capAvion, Piloto piloto) {
 		super();
-		this.idAvion = idAvion;
-		idAvion++;
+		idAvion_def++;
+		idAvion = idAvion_def;
 		this.modAvion = modAvion;
 		this.capAvion = capAvion;
 		this.piloto = piloto;

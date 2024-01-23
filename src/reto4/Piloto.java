@@ -3,7 +3,8 @@ package reto4;
 public class Piloto { 
 	
 	// Atributos
-	static private int idPiloto = 0;
+	static private int idPiloto_def = 0;
+	final private int idPiloto;
 	private String nomPiloto;
 	private int horasVueloPiloto;
 	private String rangoPiloto;
@@ -12,8 +13,8 @@ public class Piloto {
 	// Constructor
 	public Piloto(String nomPiloto, int horasVueloPiloto, String rangoPiloto) {
 		super();
-		
-		idPiloto++;
+		idPiloto_def++;
+		idPiloto = idPiloto_def;
 		this.nomPiloto = nomPiloto;
 		this.horasVueloPiloto = horasVueloPiloto;
 		this.rangoPiloto = rangoPiloto;
@@ -31,11 +32,6 @@ public class Piloto {
 
 	public int getIdPiloto() {
 		return idPiloto;
-	}
-
-
-	public void setIdPiloto(int idPiloto) {
-		this.idPiloto = idPiloto;
 	}
 
 

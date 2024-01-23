@@ -7,8 +7,8 @@ public class Combate extends Avion{
 
 	
 	// Constructor
-	public Combate(int idAvion, String modAvion, int capAvion, Piloto piloto, boolean esFurtivo) {
-		super(idAvion, modAvion, capAvion, piloto);
+	public Combate(String modAvion, int capAvion, Piloto piloto, boolean esFurtivo) {
+		super(modAvion, capAvion, piloto);
 		this.esFurtivo = esFurtivo;
 	}
 
