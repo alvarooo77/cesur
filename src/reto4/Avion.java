@@ -8,6 +8,7 @@ public class Avion {
 	private String modAvion;
 	private int capAvion;
 	private Piloto piloto;
+	private int combustible;
 	
 	
 	// Constructor
@@ -15,6 +16,7 @@ public class Avion {
 		super();
 		idAvion_def++;
 		idAvion = idAvion_def;
+		combustible = 0;
 		this.modAvion = modAvion;
 		this.capAvion = capAvion;
 		this.piloto = piloto;
@@ -65,6 +67,20 @@ public class Avion {
 		this.piloto = piloto;
 	}
 	
+	
+	public int getcombustible() {
+		return combustible;
+	}
+	
+	
+	public void rellenarCombustible(int nuevoCombustible) {
+		combustible = (combustible + nuevoCombustible);
+	}
+	
+	
+	public void consumirCombustible(int quitarCombustible) {
+		combustible = (combustible - quitarCombustible);
+	}
 	
 	
 	
