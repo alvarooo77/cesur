@@ -36,11 +36,6 @@ public class Avion {
 	}
 
 
-	public void setIdAvion(int idAvion) {
-		this.idAvion = idAvion;
-	}
-
-
 	public String getModAvion() {
 		return modAvion;
 	}
