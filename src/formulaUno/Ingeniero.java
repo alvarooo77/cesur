@@ -1,25 +1,27 @@
 package formulaUno;
+
 import java.util.Random;
 
-public class jefeDeEscuderia extends Persona{
+public class Ingeniero extends Persona{
 	
 	// Atributos
 	private final int inteligencia;
 	private int experiencia;
-	private final int liderazgo;
+	private final int innovacion;
 	
 	
 	// Constructor
-	public jefeDeEscuderia(String nombre, int dni, int edad) {
+	public Ingeniero(String nombre, int dni, int edad) {
 		super(nombre, dni, edad);
 		Random aleatorio = new Random();
 		inteligencia = aleatorio.nextInt(10);
 		experiencia = aleatorio.nextInt(10);
-		liderazgo = aleatorio.nextInt(10);
+		innovacion = aleatorio.nextInt(10);
+		
 	}
 	
 	
-	// Metodos
+	// Metodos 
 	public int getInteligencia() {
 		return inteligencia;
 	}
@@ -35,7 +37,11 @@ public class jefeDeEscuderia extends Persona{
 	}
 
 
-	public int getLiderazgo() {
-		return liderazgo;
+	public int getInnovacion() {
+		return innovacion;
+	}
+	
+	public int trabajo() {
+		return (inteligencia+experiencia+innovacion)/3;
 	}
 }
