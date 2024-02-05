@@ -8,6 +8,7 @@ public class Cilindro {
 	private final int capacidad;
 	private final int material;
 	private Ingeniero ingeniero;
+	private final int trabajoIng;
 	
 	
 	// Constructor
@@ -18,6 +19,7 @@ public class Cilindro {
 		this.idCilindro = idCilindro;
 		capacidad = aleatorio.nextInt(10);
 		material = aleatorio.nextInt(10);
+		trabajoIng = ingeniero.trabajo();
 	}
 
 

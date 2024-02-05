@@ -9,6 +9,7 @@ public class Neumaticos {
 	private int material;
 	private Ingeniero ingeniero;
 	private tipoDureza dureza;
+	private final int trabajoIng;
 	
 	// Constructor 
 	public Neumaticos(int idNeumatico, Ingeniero ingeniero) {
@@ -18,6 +19,7 @@ public class Neumaticos {
 		material = aleatorio.nextInt(10);
 		this.ingeniero = ingeniero;
 		dureza = null;
+		trabajoIng = ingeniero.trabajo();
 	}
 
 	// Metodos
@@ -59,9 +61,23 @@ public class Neumaticos {
 		this.material = material;
 	}
 	
-	
-	
-	
-	
+	public int trabajoIng() {
+		return (ingeniero.trabajo()+material)/2;	
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

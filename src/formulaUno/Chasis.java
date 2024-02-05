@@ -7,6 +7,7 @@ public class Chasis {
 	private final int idChasis;
 	private int material;
 	private Ingeniero ingeniero;
+	private final int trabajoIng;
 	
 	
 	// constructor
@@ -16,6 +17,7 @@ public class Chasis {
 		this.idChasis = idChasis;
 		material = aleatorio.nextInt(10);
 		this.ingeniero = ingeniero;
+		trabajoIng = ingeniero.trabajo();
 	}
 
 	

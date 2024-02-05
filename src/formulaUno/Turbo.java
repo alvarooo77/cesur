@@ -7,6 +7,7 @@ public class Turbo {
 	private final int rpm;
 	private final int tamaño;
 	private Ingeniero ingeniero;
+	private final int trabajoIng;
 	
 	
 	// Constructor
@@ -16,6 +17,7 @@ public class Turbo {
 		this.rpm = rpm;
 		this.tamaño = tamaño;
 		this.ingeniero = ingeniero;
+		trabajoIng = ingeniero.trabajo();
 	}
 	
 	

@@ -7,6 +7,7 @@ public class Motor {
 	private Cilindro cilindro;
 	private Turbo turbo;
 	private Ingeniero ingeniero;
+	private final int trabajoIng;
 	
 	
 	// Constructor
@@ -16,6 +17,7 @@ public class Motor {
 		this.cilindro = cilindro;
 		this.turbo = turbo;
 		this.ingeniero = ingeniero;
+		trabajoIng = ingeniero.trabajo();
 	}
 
 
