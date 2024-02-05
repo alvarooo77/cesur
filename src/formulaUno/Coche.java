@@ -71,5 +71,7 @@ public class Coche {
 	public int trabajoInt() {
 		return (chasis.trabajoIng()+neumatico.trabajoIng()+motor.trabajoIng()+INGENIERO.trabajo())/4;
 	}
-
+	
+	
+	
 }
