@@ -58,6 +58,39 @@ class MiArrayCoche {
 			numElem++;
 		}
 	}
+	
+	public void destruirCoche(Coche coche) {
+		boolean noencontrado=true;
+		int cont=0;
+		// Buscar un coche en un array vacio
+		if(numElem<1) {
+			System.out.println("no hay coches");
+		} else {
+			while(cont<numElem && noencontrado) {									// para buscar el coche
+				if(miArray[cont]==coche) {							// Si lo encuentro lo borro y paso los otros coches a la otra poscion
+					noencontrado=false;
+				}else {
+					cont++;
+				}	
+			} // fin while
+		}
+		if (noencontrado == true) {									// en caso de no encontrarlo
+			System.out.println("El coche no ha sido encontrado");
+		} else {
+			numElem--;
+			for (int i = cont; i < numElem; i++) {
+				miArray[i] = miArray[i + 1];
+			}
+			miArray[numElem] = null;
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
 } // cierra MiArray
 
 
