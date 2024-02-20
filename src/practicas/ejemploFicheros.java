@@ -1,78 +1,85 @@
 package practicas;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class ejemploFicheros {
 	
-	
-	
-	
-	public static void main (String[] args) throws IOException {
+	public static void main (String[]args) throws IOException {
+		BufferedReader entrada = null;
+		BufferedWriter salida2 = null;
+		PrintWriter salida = null;
 		
-		FileReader entrada = null;
-		
-		Scanner escaner = new Scanner(System.in);
-		
-		
-		
+		FileReader entradaFichero = null;
 		try {
-			entrada = new FileReader("texto.txt");
-			char caracter;
-			caracter=(char)entrada.read();
+			entrada = new BufferedReader(new FileReader("texto.txt"));
+			salida = new PrintWriter(new FileWriter("copiaFichero.txt"));
+			salida2 = new BufferedWriter(new FileWriter("copiaFichero2.txt"));
+			String lineaPar;
+			String lineaImpar;
+			int numLinea = 3;
 			
-		} catch (FileNotFoundException e) {
-			
-			System.out.println(e.getMessage());
-		} finally {
-			if(entrada!=null) {
+			while(numLinea > 0) {
 				
-				entrada.close();
-			}
-		}
-		
-		entrada = null;
-		//pedir cuantas lineas a leer e imprimir las lineas q pide
-		
-		try {
-			
-			System.out.println("Numero de lineas a imprimir");
-			int lineas;
-			int contador = 0;
-			lineas = escaner.nextInt();
-			
-			escaner.close();
-			
-			entrada = new FileReader("texto.txt");
-			char caracter;
-			caracter = (char)entrada.read();
-			
-			
-			if (caracter != (char)-1) {
-				while (contador < lineas || caracter == (char)-1) {
-					caracter = (char) entrada.read();
-					System.out.print(caracter);
-					if (caracter == '\n') {
-						contador++;
-					}
-
+				
+				
+				if(numLinea%2==0) {
+					lineaPar = entrada.readLine();
+					salida.println(lineaPar);
+					numLinea--;
+				}else {
+					lineaImpar = entrada.readLine();
+					salida.println(lineaImpar);
+					numLinea--;
 				}
+				
 			}
 			
 		} catch (FileNotFoundException e) {
-			
 			System.out.println(e.getMessage());
 		} finally {
 			if(entrada!=null) {
 				entrada.close();
 			}
+			if(salida2!=null) {
+				salida2.close();
+			}
+			if(salida!=null) {
+				salida.close();
+			}
 		}
-		
-	
-		
 		
 	}
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
