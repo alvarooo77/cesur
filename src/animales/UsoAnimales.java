@@ -1,4 +1,5 @@
 package animales;
+import java.util.Random;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,35 +7,33 @@ import java.util.List;
 public class UsoAnimales {
 
 	public static void main(String[] args) {
-		Mamifero perro = new Mamifero("perro",15, true);
-		Insecto hormiga = new Insecto("hormiga",1,false,true);
-		System.out.println("El animal: "+hormiga.getNombre()+ " tiene alas?: "+ hormiga.isAlas());
+		// Crear arry de 10 enteros
+		Random ale = new Random();
+		int[] enteros;
+		enteros = new int[10];
 		
-		Insecto atomica;
-		Insecto volantona;
-		volantona = hormiga;
-		atomica = new Insecto(
-				hormiga.getNombre()+" atomica",
-				hormiga.getTpoVida(),
-				hormiga.isAlas(),
-				hormiga.isAntenas()
-				);
-		hormiga.setAlas(true);
-		volantona.setNombre("volantona");
-		System.out.println(hormiga.getNombre()+" tiene alas?: "+ hormiga.isAlas());
-		System.out.println(atomica.getNombre()+" tiene alas?: "+ atomica.isAlas());
-		System.out.println(volantona.getNombre()+" tiene alas?: "+ volantona.isAlas());
+		for (int i = 0; i < enteros.length; i++) {
+			enteros[i] = ale.nextInt(10);
+			System.out.print(enteros[i]);
+		}
 		
-		System.out.println("Volantona dice: " + volantona.atributo);
-		volantona.atributo = "ya no soy insecto";
-		System.out.println("Volantona dice: " + volantona.atributo);
+		System.out.println();
 		
-		Animal pruebaSonido = new Mamifero("Perro",14,true);
-		System.out.println("Clase de pruebaSonido: "+pruebaSonido.getClass());
-		System.out.println("Instancia de Mamifero?: "+ (pruebaSonido instanceof Mamifero));
-		System.out.println("Instancia de Animal?: "+ (pruebaSonido instanceof Animal));
-		System.out.println("Instancia de Object?: "+ (pruebaSonido instanceof Object));
-		pruebaSonido.sonido();
+		boolean encontrado=false;
+		int numero = ale.nextInt(10);
+		int i =0;
+		System.out.println(numero);
+		
+		while (encontrado==true && i<10) {
+			if(numero==enteros[i]) {
+				encontrado=true;
+			}
+			i++;
+		}
+		
+		System.out.println("encontrado "+ numero + encontrado);
+		
+		
 	}
 
 }
